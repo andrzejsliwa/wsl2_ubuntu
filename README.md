@@ -5,6 +5,7 @@ Couple useful commands:
     wsl --install Ubuntu-22.04
     notepad "$env:USERPROFILE/.wslconfig"
   
+content of `.wslconfig`  
 ```properties
 [wsl2]
 memory=32GB
