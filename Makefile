@@ -3,10 +3,11 @@ all: rvm docker java git
 .PHONY: bootstrap rvm
 
 bootstrap:
-	sudo apt update
-	sudo apt upgrade
-	sudo echo "[boot]" > /etc/wsl.conf
-	sudo echo "systemd=true" >> /etc/wsl.conf
+	sudo apt update -y
+	sudo apt upgrade -y
+	sudo touch /etc/wsl.conf
+	echo "[boot]" | sudo tee -a /etc/wsl.conf
+	echo "systemd=true" | sudo tee -a /etc/wsl.conf
 	sudo apt install -y software-properties-common
 	wsl.exe --shutdown
 
